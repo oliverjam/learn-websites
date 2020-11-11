@@ -17,6 +17,10 @@ We're going to build a dev portfolio/blog site using Eleventy. Most of the featu
 
 ## Criteria
 
+Here's an example I built to demonstrate roughly the features this project needs:
+
+https://11ty-portfolio-example.netlify.app/
+
 - Multiple pages (e.g. home, about, blog)
 - Blog posts generated from markdown files
 - Recent posts on the home page
