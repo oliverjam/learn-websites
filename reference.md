@@ -230,6 +230,8 @@ module.exports = (eleventyConfig) => {
 }
 ```
 
+Note: changing config often requires you to restart your dev server to pick up the changes.
+
 ## [Assets](https://www.11ty.dev/docs/copy/)
 
 By default Eleventy only "passes through" templates. Any unrecognised files (e.g. regular JS/CSS/images) won't be copied to the final `_site/` directory.
