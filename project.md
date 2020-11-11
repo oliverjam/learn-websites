@@ -20,8 +20,9 @@ We're going to build a dev portfolio/blog site using Eleventy. Most of the featu
 - Multiple pages (e.g. home, about, blog)
 - Blog posts generated from markdown files
 - Recent posts on the home page
-- Global navigation showing all pages
-- Make it pretty
+- All posts on the blog page
+- Global navigation with links to all main pages
+- Make it pretty!
 
 ### Stretch criteria
 
