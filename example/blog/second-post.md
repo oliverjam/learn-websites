@@ -1,0 +1,5 @@
+---
+title: Second post
+---
+
+This is my second post
