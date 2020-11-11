@@ -33,6 +33,10 @@ exports.render = () => {
 };
 ```
 
+### Non-page files
+
+By default Eleventy turns all recognised templates into pages. If you want to avoid this you can put files in an `_includes/` directory. This is where things like sub-components, layouts etc should live.
+
 ## [Layouts](https://www.11ty.dev/docs/layouts/)
 
 Templates can have shared "layouts", which are like higher-level templates that wrap the template content. This is where you would put shared stuff like HTML boilerplate, links to CSS files etc.
@@ -63,11 +67,9 @@ exports.render = (data) => {
 Set that layout in a template's data:
 
 ```md
-<!-- index.md -->
-
 ---
-
-## layout: base
+layout: base
+---
 
 # Home page
 ```
@@ -83,13 +85,9 @@ Data is structured information associated with templates (but not part of the te
 Templates can set (and use) dynamic data. Most template languages use Yaml "frontmatter" blocks to set data:
 
 ```md
-<!-- index.md -->
-
 ---
-
 layout: base
 title: Home
-
 ---
 
 # Home page
@@ -134,7 +132,7 @@ Both the blog post templates will have the same layout and tags set. This helps 
 
 #### Global data
 
-You can set data for _every_ template in a project by create a `_data/` folder at the top-level and putting JSON files inside. E.g.
+You can set data for _every_ template in a project by creating a `_data/` folder at the top-level and putting JSON files inside. E.g.
 
 ```sh
 _data_/
@@ -143,6 +141,21 @@ _data_/
 ```
 
 Every template in this project would be able to access `data.site` and `data.dogs` properties.
+
+#### JS data files
+
+You can use JavaScript for data files by added the `.11tydata.js` extension. This allows you to export an async function that can e.g. fetch data from an API.
+
+```js
+// posts.11tydata.js
+
+module.exports = () => {
+  // if your blog posts were stored on Airtable
+  return fetch("https://airtable.com/1234/my-posts").then((res) => res.json());
+};
+```
+
+This API response data would then be available in templates as `data.posts`.
 
 ### Using data
 
@@ -189,7 +202,7 @@ exports.render = (data) => {
   const posts = data.collections.blog;
   return `
     <ul>
-      ${posts.map((post) => `<li>${post.title}</li>`)}
+      ${posts.map((post) => `<li>${post.title}</li>`).join("")}
     </ul>
   `;
 };

@@ -9,7 +9,7 @@ This workshop aims to show you how to build a content-driven site (e.g. a dev bl
 - Search-engine optimisation
 - Social media previews
 
-We're (eventually) going to be using a "static site generator" called [Eleventy]().
+We're (eventually) going to be using a "static site generator" called [Eleventy](https://11ty.dev/).
 
 ## Part 1: building the site
 
