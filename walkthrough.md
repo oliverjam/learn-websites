@@ -327,7 +327,7 @@ exports.render = (data) => {
   const posts = data.collections.blog;
   let postItems = "";
   for (let post of posts) {
-    postItems += `<li><a href="${post.url}">${post.title}</a></li>`;
+    postItems += `<li><a href="${post.url}">${post.data.title}</a></li>`;
   }
   // ... render the <li>s in your UI somehow
 };
