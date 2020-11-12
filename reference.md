@@ -226,7 +226,7 @@ module.exports = (eleventyConfig) => {
     dir: {
       input: "src",
     },
-  },
+  };
 }
 ```
 
