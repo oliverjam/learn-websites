@@ -102,21 +102,21 @@ We need to read the original file's content as a string, then write a new file w
 files.forEach((filename) => {
   if (filename.endsWith(".html")) {
     const content = fs.readFileSync(filename);
-    // output to /dist/${filename}
-    const outputPath = path.join("dist", filename);
+    // output to /build/${filename}
+    const outputPath = path.join("build", filename);
     fs.writeFileSync(outputPath, content);
-    console.log(`${filename} -> dist/${filename}`);
+    console.log(`${filename} -> build/${filename}`);
   }
 });
 ```
 
-Run your build script again and you should see a log for each file. You should also see copies of both files appear in the `dist/` directory.
+Run your build script again and you should see a log for each file. You should also see copies of both files appear in the `build/` directory.
 
 Finally we want to wrap each file's content in our HTML boilerplate and add the navigation. We can do this with a template literal.
 
 ```js
 const content = fs.readFileSync(filename);
-const outputPath = path.join("dist", filename);
+const outputPath = path.join("build", filename);
 const outputContent = `
 <!doctype html>
 <html lang="en">
@@ -135,7 +135,7 @@ const outputContent = `
 </html>
     `;
 fs.writeFileSync(outputPath, outputContent);
-console.log(`${filename} -> dist/${filename}`);
+console.log(`${filename} -> build/${filename}`);
 ```
 
 Run your script one last time and you should see full HTML files created with all the extra stuff.
