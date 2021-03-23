@@ -195,7 +195,7 @@ Now `npm run build` will just create the `_site` directory, whilst `npm run dev`
 
 We're still missing all the shared stuff our previous build script added to our pages. Eleventy has a feature called "layouts" for this.
 
-An Eleventy layout is a special page that wraps \_other pages. They have to live in a special directory named `_includes` (by default). This is where you put things that shouldn't be turned into HTML pages.
+An Eleventy layout is a special page that wraps other pages. They have to live in a special directory named `_includes` (by default). This is where you put things that shouldn't be turned into HTML pages.
 
 In order to create a layout we need to be able to "dynamically" generate pages. E.g. we need a way for Eleventy to give our layout each page's content and insert that into our HTML boilerplate.
 
